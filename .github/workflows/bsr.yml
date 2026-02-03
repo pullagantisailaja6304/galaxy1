@@ -1,0 +1,14 @@
+name:python test
+on:[push]
+jobs:
+  test:
+    runs-on:ubuntu-latest
+  steps:
+    -name:chechout code
+     uses:actions/chechout@v4
+    -name:setup python
+     uses:actions/setup-python@v5
+    with:
+      python-version:"3.13"
+    -name:run test
+     run:python sum.py
